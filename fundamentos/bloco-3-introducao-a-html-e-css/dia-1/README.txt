@@ -1,0 +1,2 @@
+Teste git add
+ignore
