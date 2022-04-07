@@ -65,3 +65,19 @@ else if (val > 0){
 else if (val = 0){
     console.log (val + " é zero")
 }
+// separando
+console.log ("      ")
+// separando
+
+// Triângulo
+const ang1 = 60
+const ang2 = 40
+const ang3 = 80
+
+switch(ang1 + ang2 + ang3 == 180){
+    case true:
+        console.log ("É um triângulo")
+        break
+    case false:
+        console.log ("Não é um triângulo")
+}
