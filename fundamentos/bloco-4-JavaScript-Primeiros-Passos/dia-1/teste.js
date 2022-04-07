@@ -14,8 +14,10 @@ console.log (a / b)
 
 // módulo
 console.log (a % b)
+
 // separando
 console.log ("      ")
+// separando
 
 // Programa para retornar o maior numero
 const n1 = 1235643
@@ -28,3 +30,24 @@ if(n1 > n2){
 else if (n2 > n1){
     console.log (n2 + " é maior q " + n1)
 }
+// separando
+console.log ("      ")
+// separando
+
+// Programa para retornar o maior de 3 numeros
+const no1 = 390847892710
+const no2 = 1927389173091
+const no3 = 6841844644158
+if(no1 > no2 && no1 >  no3){
+    console.log (no1 + " é o maior número")
+}
+else if (no2 > no1 && no2 > no3){
+    console.log (no2 + " é o maior número")
+}
+else if (no3 > no1 && no3 > no2){
+    console.log (no3 + " é o maior número")
+}
+else {
+    console.log ("erro")
+}
+
