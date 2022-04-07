@@ -1,0 +1,8 @@
+div:hover{
+    border-style:groove;
+}
+div:hover{
+    transition: all;
+    color: magenta
+    violet
+}
