@@ -50,4 +50,18 @@ else if (no3 > no1 && no3 > no2){
 else {
     console.log ("erro")
 }
+// separando
+console.log ("      ")
+// separando
 
+// Reconhecedor de valor
+const val = -190
+if (val < 0){
+    console.log (val + " é negativo")
+}
+else if (val > 0){
+    console.log (val + " é positivo")
+}
+else if (val = 0){
+    console.log (val + " é zero")
+}
