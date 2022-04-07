@@ -81,3 +81,14 @@ switch(ang1 + ang2 + ang3 == 180){
     case false:
         console.log ("Não é um triângulo")
 }
+// separando
+console.log ("      ")
+// separando
+
+// ligeiramente confuso com esse, voltarei mais tarde
+let peca = ("Cavalo")
+console.log("faz o L")
+
+// separando
+console.log ("      ")
+// separando
