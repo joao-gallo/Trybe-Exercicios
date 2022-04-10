@@ -1,4 +1,4 @@
- let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+//  let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 // soma = (numbers[0] + numbers[1] + numbers[2] + numbers [3] + numbers[4] + numbers[5] + numbers[6] + numbers[7] + numbers[8] + numbers[9])
 // let media = (soma / 10)
 // if(media > 20){
@@ -15,12 +15,32 @@
 // }
 //    console.log(maiorNumero)
 
-for (let i = 1; i < numbers.length; i += 1){
-    if (numbers[i] % 2 ==! 0){
-        console.log ("tem impar")
-    }else if (numbers[i] % 2 == 0){
-        console.log("tem par");
-    }else (
-        console.log("Nenhum valor impar encontrado")
-    )
+// for (let i = 1; i < numbers.length; i += 1){
+//     if (numbers[i] % 2 ==! 0){
+//         console.log ("tem impar")
+//     }else if (numbers[i] % 2 == 0){
+//         console.log("tem par");
+//     }else (
+//         console.log("Nenhum valor impar encontrado")
+//     )
+// }
+
+// let menorNumero = numbers[0]
+// for (let i = 1; i < numbers.length; i += 1){
+//     if (numbers[i] < menorNumero){
+//         menorNumero = numbers[i]
+//     }
+//     console.log(menorNumero)
+// }
+
+let numbers = [];
+
+for (let index = 1; index <= 25; index += 1) {
+  numbers.push(index);
+}
+
+console.log(numbers);
+
+for (i = 1; i < numbers.length; i += 1){
+    console.log(numbers[i] / 2)
 }
