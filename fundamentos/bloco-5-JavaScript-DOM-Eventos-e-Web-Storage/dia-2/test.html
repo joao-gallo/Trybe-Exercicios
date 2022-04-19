@@ -61,9 +61,21 @@
         elementH1.innerText = 'Exercício 5.2 - JavaScript DOM';
         document.body.appendChild('elementH1');
 
-        const elementMain = document.createElement('main')
-        elementMain.className = 'main-content'
-        document.body.appendChild(elementMain)
+        const elementMain = document.createElement('main');
+        elementMain.className = 'main-content';
+        document.body.appendChild(elementMain);
+
+        const elementSection = document.createElement('section');
+        elementSection.className = 'center-content'
+        elementMain.appendChild(elementSection)
+
+        const para = document.createElement('p');
+        para.innerHTML ('olá olá olá opopaoap');
+        elementSection.appendChild(para);
+
+        const elementSection2 = document.createElement('section');
+        elementSection2.className = 'left-content'
+        elementMain.appendChild(elementSection2)
 
     </script>
   </body>
