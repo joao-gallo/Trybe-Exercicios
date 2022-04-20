@@ -57,9 +57,9 @@
   </head>
   <body>
     <script>
-      let elementH1 = document.createElement('h1');
+      const elementH1 = document.createElement('h1');
         elementH1.innerText = 'Exercício 5.2 - JavaScript DOM';
-        document.body.appendChild('elementH1');
+        document.body.appendChild(elementH1);
 
         const elementMain = document.createElement('main');
         elementMain.className = 'main-content';
@@ -70,13 +70,47 @@
         elementMain.appendChild(elementSection)
 
         const para = document.createElement('p');
-        para.innerHTML ('olá olá olá opopaoap');
+        para.innerHTML = "olá olá olá opopaoap";
         elementSection.appendChild(para);
 
         const elementSection2 = document.createElement('section');
-        elementSection2.className = 'left-content'
-        elementMain.appendChild(elementSection2)
+        elementSection2.className = 'left-content';
+        elementMain.appendChild(elementSection2);
 
+        const elementSection3 = document.createElement('section');
+        elementSection3.className = 'right-content'
+        elementMain.appendChild(elementSection3);
+
+        const elementImg = document.createElement('img');
+        elementImg.className = 'small-image'
+        elementImg.src = 'https://picsum.photos/200'
+        elementSection2.appendChild(elementImg)
+
+        const elementList = document.createElement('ul')
+        const arrayNumbers = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis',
+        'Sete', 'Oito', 'Nove', 'Dez']
+        for (let n in arrayNumbers){
+          const elementLi = document.createElement('li');
+          elementLi.innerHTML = arrayNumbers[n]
+          elementList.appendChild(elementLi)
+        }
+        elementSection3.appendChild(elementList)
+
+        for (let index = 1; index <= 3; index += 1) {
+        const elementH3 = document.createElement('h3');
+        elementH3.innerHTML = 'menin ' + index;
+        elementMain.appendChild(elementH3);
+        elementH3.className = 'description'
+      }
+
+        elementH1.className = 'title'
+        elementMain.removeChild(elementSection2)
+        elementSection3.style.marginRight = 'auto'
+       
+        elementSection.parentElement.style.backgroundColor = 'grey';
+
+        elementList.lastChild.remove()
+        elementList.lastChild.remove()
     </script>
   </body>
 </html>
