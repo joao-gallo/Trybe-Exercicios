@@ -1,36 +1,52 @@
-function verify(value1, value2){
-    if (value1 === '' || value2 === ''){
-        throw new Error ('Valores invalidos')
-    }
-}
-function isN(value1, value2){
-    if (isNaN(value1) || isNaN(value2)){
-        throw new Error ('Valores não-numericos')
-    }
-}
-
-function sum() {
-    try{
-    const value1 = document.getElementById('value1').value;
-    const value2 = document.getElementById('value2').value;
-    verify(value1, value2);
-    isN(value1, value2)
-    const result = parseInt(value1) + parseInt(value2);
-    document.getElementById('result').innerHTML = `Resultado:${result}`;
-    // document.getElementById('value1').value = '';
-    // document.getElementById('value2').value = '';
-    }
-catch (error){
-    document.getElementById('result').innerHTML = `Erro: ${error.message}`;
-    // document.getElementById('value1').value = '';
-    // document.getElementById('value2').value = '';
-}
-finally{
-    document.getElementById('value1').value = '';
-    document.getElementById('value2').value = '';
-}
-}
- window.onload = () => {
-    const button = document.getElementById('button');
-    button.addEventListener('click', sum);
+const order = {
+    name: 'Rafael Andrade',
+    phoneNumber: '11-98763-1416',
+    address: {
+      street: 'Rua das Flores',
+      number: '389',
+      apartment: '701',
+    },
+    order: {
+      pizza: {
+        marguerita: {
+          amount: 1,
+          price: 25,
+        },
+        pepperoni: {
+          amount: 1,
+          price: 20,
+        }
+      },
+      drinks: {
+        coke: {
+          type: 'Coca-Cola Zero',
+          price: 10,
+          amount: 1,
+        }
+      },
+      delivery: {
+        deliveryPerson: 'Ana Silveira',
+        price: 5,
+      }
+    },
+    payment: {
+      total: 60,
+    },
+  };
+  
+  const customerInfo = (order) => {
+    return `Olá ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, telefone: ${order.phoneNumber}, ${order.address.street} ${order.address.number} ${order.address.apartment}`
   }
+  
+  customerInfo(order);
+  
+  const orderModifier = (order) => {
+    // Adicione abaixo as informações necessárias.
+    order.name = 'Luiz Silva'
+    order.payment.total = 50
+    let pizzas = Object.keys(order.order.pizza)
+    let coca = Object.values(order.order.drinks.coke)
+  
+  console.log(`Olá, ${order.name}, o total do seu pedido de ${pizzas[0]}, ${pizzas[1]} e ${coca[0]} é ${order.payment.total}`)
+  }
+  orderModifier(order);
