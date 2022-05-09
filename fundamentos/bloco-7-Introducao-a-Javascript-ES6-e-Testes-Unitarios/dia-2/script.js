@@ -1,52 +1,67 @@
-const order = {
-    name: 'Rafael Andrade',
-    phoneNumber: '11-98763-1416',
-    address: {
-      street: 'Rua das Flores',
-      number: '389',
-      apartment: '701',
-    },
-    order: {
-      pizza: {
-        marguerita: {
-          amount: 1,
-          price: 25,
-        },
-        pepperoni: {
-          amount: 1,
-          price: 20,
-        }
-      },
-      drinks: {
-        coke: {
-          type: 'Coca-Cola Zero',
-          price: 10,
-          amount: 1,
-        }
-      },
-      delivery: {
-        deliveryPerson: 'Ana Silveira',
-        price: 5,
-      }
-    },
-    payment: {
-      total: 60,
-    },
+const lesson1 = {
+    materia: 'Matemática',
+    numeroEstudantes: 20,
+    professor: 'Maria Clara',
+    turno: 'manhã',
   };
   
-  const customerInfo = (order) => {
-    return `Olá ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, telefone: ${order.phoneNumber}, ${order.address.street} ${order.address.number} ${order.address.apartment}`
+  const lesson2 = {
+    materia: 'História',
+    numeroEstudantes: 20,
+    professor: 'Carlos',
+  };
+  
+  const lesson3 = {
+    materia: 'Matemática',
+    numeroEstudantes: 10,
+    professor: 'Maria Clara',
+    turno: 'noite',
+  };
+
+  function noite(object, key, value){
+      object[key] = value;
   }
-  
-  customerInfo(order);
-  
-  const orderModifier = (order) => {
-    // Adicione abaixo as informações necessárias.
-    order.name = 'Luiz Silva'
-    order.payment.total = 50
-    let pizzas = Object.keys(order.order.pizza)
-    let coca = Object.values(order.order.drinks.coke)
-  
-  console.log(`Olá, ${order.name}, o total do seu pedido de ${pizzas[0]}, ${pizzas[1]} e ${coca[0]} é ${order.payment.total}`)
+  noite(lesson2, 'turno', 'Noite')
+  console.log(lesson2)
+
+  function lista(objeto){
+      return Object.keys(objeto)
   }
-  orderModifier(order);
+  console.log(lista(lesson3))
+
+  function listaVa(objetin){
+      return Object.values(objetin)
+  }
+  console.log(listaVa(lesson3))
+
+  let allLessons = Object.assign({}, { lesson1, lesson2, lesson3 })
+console.log(allLessons)
+
+function allStudents(){
+   let sala1 = allLessons.lesson1.numeroEstudantes
+   let sala2 = allLessons.lesson2.numeroEstudantes
+   let sala3 = allLessons.lesson3.numeroEstudantes
+   return (sala1 + sala2 + sala3)
+}
+console.log(allStudents())
+
+function valorChave(chave, valor){
+    return Object.values(chave)[valor];
+}
+console.log(valorChave(lesson1, 0))
+
+function existe(obj, ky, val){
+    obje = Object.entries(obj)
+    for(i in obje){
+    if (Object.keys[i] == obj.ky && Object.values[i] == obj.val){
+        exist = true
+    }
+
+    else{
+        exist = false
+    }
+
+    return exist
+}
+}
+console.log(existe(lesson3, 'turno', 'noite'))
