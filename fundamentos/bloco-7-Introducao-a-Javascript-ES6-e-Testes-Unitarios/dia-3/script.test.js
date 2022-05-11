@@ -1,4 +1,4 @@
-const {sum, myRemove, myFizzBuzz} = require('./script.js')
+const {sum, myRemove, myFizzBuzz, encode, decode} = require('./script.js')
 describe('testes 1', () =>{
     test ('se 4 e 5 retorna 9', () => {
         expect(sum(4,5)).toBe(9);
@@ -27,5 +27,22 @@ describe ('Testes 3', () =>{
         expect(myFizzBuzz(10)).toBe('buzz')
         expect(myFizzBuzz(7)).toBe(7)
         expect(myFizzBuzz('q')).toBe(false)
+    })
+})
+describe ('Testes 4', () =>{
+    test ('testa se encode e decode são funções', () =>{
+        expect(encode && decode).toBeDefined()
+    })
+    test ('testa se encode converte corretamente', () =>{
+        expect(encode('a', 'e', 'i', 'o', 'u')).toBe('1','2','3','4','5')
+    })
+    test ('testa se decode converte corretamente', () =>{
+        expect(encode('a', 'e', 'i', 'o', 'u')).toBe('1','2','3','4','5')
+    })
+    test ('testa se as outras letras são convertidas', () =>{
+        expect(encode('z')).toBe('z')
+    })
+    test('testa se retorna o mesmo numero de caractere', () =>{
+        expect(encode('aeiou')).toHaveLength(5);
     })
 })

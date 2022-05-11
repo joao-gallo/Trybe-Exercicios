@@ -5,7 +5,7 @@ function sum(a, b) {
   
     return a + b;
   }
-module.exports = {sum, myRemove, myFizzBuzz};
+module.exports = {sum, myRemove, myFizzBuzz, encode, decode};
 // ----
 function myRemove(arr, item) {
     let newArr = [];
@@ -25,4 +25,27 @@ function myRemove(arr, item) {
     return num;
   }
   
-  // implemente seus testes aqui
+  //-----
+
+  function encode(estringue) {
+    // let inicio = estringue;
+    for (i = 0; i < estringue.length; i += 1){
+      estringue = estringue.replace('a', '1')
+      estringue = estringue.replace('e', '2')
+      estringue = estringue.replace('i', '3')
+      estringue = estringue.replace('o', '4')
+      estringue = estringue.replace('u', '5')
+    }
+    return estringue
+  }
+  function decode(estringue) {
+      final = estringue
+    for (i = 0; i < estringue.length; i += 1){
+      final = final.replace('1', 'a')
+      final = final.replace('2', 'e')
+      final = final.replace('3', 'i')
+      final = final.replace('4', 'o')
+      final = final.replace('5', 'u')
+  }
+  return final
+  }
